@@ -1,1 +1,467 @@
-404: Not Found
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vehicle Preservation Program — Stop Losing Sales to "I'll Think About It"</title>
+<meta name="description" content="A guided consultation system that turns your advisors into closers. Personalized driver profiles, smart recommendations, zero pushy sales tactics." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --teal: #1a3a3a;
+    --teal-light: #2d6b6b;
+    --sage: #f4f7f5;
+    --sage-dark: #dce5de;
+    --accent: #c4915c;
+    --text: #1a2a2a;
+    --text-secondary: #5a6b6b;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(26,58,58,0.95); backdrop-filter: blur(12px);
+    padding: 16px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo {
+    color: var(--white); font-size: 20px; font-weight: 700; letter-spacing: -0.5px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: var(--white); border: none;
+    padding: 10px 24px; border-radius: 30px; font-size: 14px;
+    font-weight: 600; cursor: pointer; text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); opacity: 0.9; }
+
+  .hero {
+    background: var(--teal);
+    color: var(--white);
+    padding: 160px 40px 100px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(196,145,92,0.2); color: var(--accent);
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    padding: 8px 20px; border-radius: 30px; margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 800; line-height: 1.1;
+    max-width: 800px; margin: 0 auto 24px;
+    letter-spacing: -1.5px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--accent);
+  }
+  .hero p {
+    font-size: clamp(16px, 2vw, 20px);
+    opacity: 0.75; max-width: 580px; margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--accent); color: var(--white);
+    padding: 18px 44px; border-radius: 40px;
+    font-size: 17px; font-weight: 700; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(196,145,92,0.3);
+  }
+  .hero-sub {
+    margin-top: 16px; font-size: 13px; opacity: 0.45;
+  }
+
+  .pain {
+    padding: 100px 40px;
+    text-align: center;
+    background: var(--white);
+  }
+  .pain-label {
+    font-size: 12px; font-weight: 700; color: var(--teal-light);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+  }
+  .pain h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800; letter-spacing: -1px;
+    max-width: 700px; margin: 0 auto 20px;
+  }
+  .pain > p {
+    font-size: 17px; color: var(--text-secondary);
+    max-width: 560px; margin: 0 auto 56px; line-height: 1.7;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px; max-width: 960px; margin: 0 auto;
+  }
+  .pain-card {
+    background: var(--sage); border-radius: 16px;
+    padding: 32px 28px; text-align: left;
+    border: 1px solid var(--sage-dark);
+  }
+  .pain-card .emoji { font-size: 28px; margin-bottom: 16px; }
+  .pain-card h3 {
+    font-size: 17px; font-weight: 700; margin-bottom: 8px;
+    color: var(--teal);
+  }
+  .pain-card p {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+  }
+
+  .how {
+    padding: 100px 40px;
+    background: var(--teal);
+    color: var(--white);
+  }
+  .how-label {
+    font-size: 12px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 16px; text-align: center;
+  }
+  .how h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800; letter-spacing: -1px;
+    text-align: center; margin-bottom: 64px;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px; max-width: 960px; margin: 0 auto;
+  }
+  .step {
+    text-align: center;
+    padding: 0 16px;
+  }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 800;
+    margin: 0 auto 24px;
+  }
+  .step h3 {
+    font-size: 19px; font-weight: 700; margin-bottom: 12px;
+  }
+  .step p {
+    font-size: 15px; opacity: 0.7; line-height: 1.7;
+  }
+
+  .profile {
+    padding: 100px 40px;
+    background: var(--sage);
+  }
+  .profile-inner {
+    max-width: 960px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+  }
+  .profile-text .label {
+    font-size: 12px; font-weight: 700; color: var(--teal-light);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+  }
+  .profile-text h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;
+  }
+  .profile-text p {
+    font-size: 16px; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 16px;
+  }
+  .profile-mockup {
+    background: var(--white); border-radius: 20px;
+    padding: 32px; border: 1px solid var(--sage-dark);
+    box-shadow: 0 20px 60px rgba(26,58,58,0.08);
+  }
+  .profile-mockup .mock-badge {
+    display: inline-block;
+    background: rgba(45,107,107,0.1); color: var(--teal-light);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .profile-mockup h3 {
+    font-size: 26px; font-weight: 800; color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .profile-mockup .mock-desc {
+    font-size: 14px; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 24px;
+  }
+  .mock-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .mock-tag {
+    background: var(--sage); color: var(--teal-light);
+    font-size: 12px; font-weight: 600; padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .stats {
+    padding: 80px 40px;
+    background: var(--white);
+  }
+  .stats-grid {
+    max-width: 960px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px; text-align: center;
+  }
+  .stat-num {
+    font-size: 48px; font-weight: 800; color: var(--teal);
+    letter-spacing: -2px; margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+  }
+
+  .included {
+    padding: 100px 40px;
+    background: var(--white);
+  }
+  .included-label {
+    font-size: 12px; font-weight: 700; color: var(--teal-light);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 16px; text-align: center;
+  }
+  .included h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800; letter-spacing: -1px;
+    text-align: center; margin-bottom: 64px;
+  }
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; max-width: 960px; margin: 0 auto;
+  }
+  .included-card {
+    background: var(--sage); border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid var(--sage-dark);
+  }
+  .included-card h3 {
+    font-size: 18px; font-weight: 700; color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .included-card p {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+  }
+
+  .cta {
+    padding: 100px 40px;
+    background: var(--teal);
+    color: var(--white);
+    text-align: center;
+  }
+  .cta h2 {
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 800; letter-spacing: -1px;
+    max-width: 700px; margin: 0 auto 20px;
+  }
+  .cta p {
+    font-size: 17px; opacity: 0.7;
+    max-width: 500px; margin: 0 auto 44px;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent); color: var(--white);
+    padding: 18px 48px; border-radius: 40px;
+    font-size: 17px; font-weight: 700; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(196,145,92,0.3);
+  }
+  .cta-sub {
+    margin-top: 16px; font-size: 13px; opacity: 0.4;
+  }
+
+  footer {
+    padding: 40px;
+    background: var(--teal);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .hero { padding: 130px 24px 80px; }
+    .pain, .how, .profile, .stats, .included, .cta { padding: 72px 24px; }
+    .profile-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Vehicle <span>Preservation</span> Program</a>
+  <a href="#get-started" class="nav-cta">Get Started</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">For PPF, Ceramic Coating &amp; Tint Shops</div>
+  <h1>Stop hearing <em>"okay thanks, I'll check my schedule"</em></h1>
+  <p>A guided consultation system that turns every advisor into a closer. Personalized driver profiles, smart recommendations, zero pushy sales tactics.</p>
+  <a href="#get-started" class="hero-cta">Book a Demo</a>
+  <div class="hero-sub">Currently piloting with select shops</div>
+</section>
+
+<section class="pain">
+  <div class="pain-label">The Problem</div>
+  <h2>Your sales process is costing you money</h2>
+  <p>Sound familiar? These are the conversations happening in every PPF and coating shop right now.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="emoji">&#x1F47B;</div>
+      <h3>"I'll get back to you"</h3>
+      <p>Customers leave without buying because nobody guided them to a decision. They got a quote, said thanks, and disappeared.</p>
+    </div>
+    <div class="pain-card">
+      <div class="emoji">&#x1F62C;</div>
+      <h3>Full body chargebacks</h3>
+      <p>Selling $8,000+ full body PPF to people who don't need it. The economy shifts, buyer's remorse kicks in, and you eat the material cost.</p>
+    </div>
+    <div class="pain-card">
+      <div class="emoji">&#x1F937;</div>
+      <h3>Advisors who can't close</h3>
+      <p>Your team knows the product but doesn't know how to sell it. They talk features instead of asking the right questions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-label">How It Works</div>
+  <h2>A repeatable process that actually closes</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Guided Consultation</h3>
+      <p>Your advisor walks through a simple conversation flow on a tablet or phone. No scripts. Just the right questions, in the right order.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Driver Profile Generated</h3>
+      <p>Based on their lifestyle, driving habits, and vehicle — the system generates a personalized driver profile. It's like a personality test for their car.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Smart Recommendation</h3>
+      <p>The customer sees exactly why each service was recommended, tied to their specific situation. No pushy upsells. Just logic they can trust.</p>
+    </div>
+  </div>
+</section>
+
+<section class="profile">
+  <div class="profile-inner">
+    <div class="profile-text">
+      <div class="label">The Differentiator</div>
+      <h2>"What's your driver profile?"</h2>
+      <p>Every customer gets a personalized driver profile based on how they actually use their vehicle. It's the hook that makes the recommendation feel earned, not pitched.</p>
+      <p>Your advisor doesn't have to sell — they just reveal the result. "I knew it. You're a Daily Commuter. Here's what the system recommends for your situation."</p>
+      <p>It works in the shop. It works in your ads. It works at car shows. It's the pattern interrupt this industry has never had.</p>
+    </div>
+    <div class="profile-mockup">
+      <div class="mock-badge">Your Driver Profile</div>
+      <h3>The Daily Commuter</h3>
+      <p class="mock-desc">You're clocking serious highway miles in a vehicle you plan to keep long-term. Your biggest exposure risks are road debris and environmental contaminants. Protection that works hard without high maintenance is the right fit.</p>
+      <div class="mock-tags">
+        <span class="mock-tag">Heavy Highway</span>
+        <span class="mock-tag">Long-Term Owner</span>
+        <span class="mock-tag">Outdoor Parking</span>
+        <span class="mock-tag">Cabin Heat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-num">85%</div>
+      <div class="stat-label">of consumers expect a business to recommend the right solution</div>
+    </div>
+    <div>
+      <div class="stat-num">63%</div>
+      <div class="stat-label">want to consult with someone before making an automotive purchase</div>
+    </div>
+    <div>
+      <div class="stat-num">0</div>
+      <div class="stat-label">full body PPF jobs recommended by the system — by design</div>
+    </div>
+  </div>
+</section>
+
+<section class="included">
+  <div class="included-label">What You Get</div>
+  <h2>Everything your shop needs to close smarter</h2>
+  <div class="included-grid">
+    <div class="included-card">
+      <h3>Branded Consultation App</h3>
+      <p>White-labeled with your shop's logo and colors. Works on any tablet, phone, or desktop browser. Your customers never see another brand.</p>
+    </div>
+    <div class="included-card">
+      <h3>Smart Recommendation Engine</h3>
+      <p>Recommendations based on driving habits, vehicle type, ownership, environment, and maintenance — not based on what gives the highest commission.</p>
+    </div>
+    <div class="included-card">
+      <h3>Driver Profile System</h3>
+      <p>Every customer gets a personalized profile that makes the consultation feel like a discovery, not a pitch. Doubles as your ad creative hook.</p>
+    </div>
+    <div class="included-card">
+      <h3>Sales Coaching</h3>
+      <p>Your team learns how to have the right conversations. The app guides the flow, but the training makes it feel natural. No more scripts.</p>
+    </div>
+    <div class="included-card">
+      <h3>Simplified Product Lineup</h3>
+      <p>We work with you to streamline your offerings. One PPF, three ceramic tiers, three tint tiers, maintenance detailing. Simple sells.</p>
+    </div>
+    <div class="included-card">
+      <h3>PDF Reports &amp; Follow-Up</h3>
+      <p>Export every consultation as a branded PDF. Share via email or text. Built-in reason to follow up and close the deal later.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="get-started">
+  <h2>Ready to stop leaving money on the table?</h2>
+  <p>We're piloting the Vehicle Preservation Program with select shops. Limited spots for 2026.</p>
+  <a href="mailto:max@heymaxdb.com?subject=Vehicle%20Preservation%20Program%20-%20Interested" class="cta-btn">Let's Talk</a>
+  <div class="cta-sub">No commitment. Just a conversation about your shop.</div>
+</section>
+
+<footer>
+  &copy; 2026 Vehicle Preservation Program
+</footer>
+
+</body>
+</html>
