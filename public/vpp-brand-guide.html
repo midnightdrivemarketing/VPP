@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Preservation Program — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:wght@400;500;600;700&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest: #1F3A33;
+    --forest-mid: #2A4D42;
+    --forest-light: #365C50;
+    --gold: #C9A84C;
+    --gold-dark: #A8893A;
+    --gold-light: #E0CB7E;
+    --gold-pale: #F5EDD3;
+    --sage: #E8F0EC;
+    --sage-dark: #D4E2DA;
+    --cream: #FAF8F3;
+    --white: #FFFFFF;
+    --charcoal: #2D2E27;
+    --text-primary: #1D1D1D;
+    --text-secondary: #575757;
+    --text-muted: #8A8A8A;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+
+  .hero {
+    background: linear-gradient(165deg, #141F1C 0%, var(--forest) 40%, var(--forest-mid) 100%);
+    color: white;
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+  }
+  .hero h2 {
+    font-family: 'Outfit', sans-serif; font-size: 52px; font-weight: 700;
+    letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.05;
+  }
+  .hero p { font-size: 16px; opacity: 0.45; max-width: 520px; margin: 0 auto; }
+  .hero .gold-rule {
+    width: 60px; height: 2px; background: var(--gold); margin: 24px auto 0; border-radius: 1px;
+  }
+
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px; font-weight: 700; color: var(--text-primary);
+    margin-bottom: 12px; letter-spacing: -0.01em;
+  }
+  .section-desc {
+    font-size: 15px; color: var(--text-secondary); max-width: 600px;
+    margin-bottom: 48px; line-height: 1.7;
+  }
+  .divider {
+    height: 1px; background: var(--sage-dark); margin: 0 auto;
+    max-width: 1100px;
+  }
+
+  /* Logo concepts grid */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .logo-card {
+    border-radius: 20px;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+  .logo-card:hover { transform: translateY(-2px); }
+  .logo-card.light {
+    background: white;
+    border: 1px solid var(--sage-dark);
+  }
+  .logo-card.dark {
+    background: var(--forest);
+    color: white;
+  }
+  .logo-card.cream-bg {
+    background: var(--cream);
+    border: 1px solid var(--sage-dark);
+  }
+  .logo-card .card-label {
+    position: absolute;
+    top: 16px; left: 20px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    opacity: 0.4;
+  }
+  .logo-card .card-note {
+    font-size: 12px; color: var(--text-muted); margin-top: 24px; text-align: center;
+    line-height: 1.5;
+  }
+  .logo-card.dark .card-note { color: rgba(255,255,255,0.35); }
+
+  /* Icon/Favicon concepts */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .icon-box {
+    width: 80px; height: 80px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    position: relative;
+    overflow: hidden;
+  }
+  .icon-box.sm { width: 48px; height: 48px; border-radius: 12px; }
+  .icon-box.xs { width: 32px; height: 32px; border-radius: 8px; font-size: 14px; }
+  .icon-box.circle { border-radius: 50%; }
+  .icon-label {
+    font-size: 10px; color: var(--text-muted); font-weight: 600;
+    text-align: center; letter-spacing: 0.05em;
+  }
+
+  /* Favicon row */
+  .favicon-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 32px;
+    padding: 32px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--sage-dark);
+  }
+  .favicon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .favicon-item .size-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  /* Color palette */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .color-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--sage-dark);
+    background: white;
+  }
+  .color-swatch { height: 100px; }
+  .color-info { padding: 14px 16px; }
+  .color-name { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .color-hex { font-size: 11px; color: var(--text-muted); font-family: 'SF Mono', 'Fira Code', monospace; }
+  .color-use { font-size: 11px; color: var(--text-secondary); margin-top: 6px; line-height: 1.4; }
+
+  /* Typography showcase */
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--sage-dark);
+  }
+  .type-label {
+    flex: 0 0 140px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .type-sample { flex: 1; }
+  .type-meta {
+    flex: 0 0 200px;
+    font-size: 11px; color: var(--text-muted); text-align: right; line-height: 1.6;
+  }
+
+  /* Usage examples */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .usage-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--sage-dark);
+  }
+  .usage-mockup {
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+  .usage-desc { padding: 20px 24px; border-top: 1px solid var(--sage-dark); }
+  .usage-desc h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .usage-desc p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+  /* App header mockup */
+  .app-header-mock {
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(12px);
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--sage-dark);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 420px;
+  }
+  .app-header-mock .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--forest);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .app-header-mock .header-text { flex: 1; }
+  .app-header-mock .header-text .program-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px; font-weight: 700;
+    color: var(--forest); letter-spacing: -0.01em;
+  }
+  .app-header-mock .header-text .shop-name {
+    font-size: 10px; color: var(--text-muted); font-weight: 500;
+  }
+
+  /* Do / Don't grid */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .do-card, .dont-card { padding: 24px; border-radius: 16px; border: 1px solid; }
+  .do-card { background: rgba(31,58,51,0.04); border-color: rgba(31,58,51,0.15); }
+  .dont-card { background: rgba(200,50,50,0.03); border-color: rgba(200,50,50,0.12); }
+  .do-card h4 { color: var(--forest); font-size: 13px; margin-bottom: 12px; }
+  .dont-card h4 { color: #C83232; font-size: 13px; margin-bottom: 12px; }
+  .do-card li, .dont-card li {
+    font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.5;
+    list-style: none; padding-left: 20px; position: relative;
+  }
+  .do-card li::before { content: '✓'; position: absolute; left: 0; color: var(--forest); font-weight: 700; }
+  .dont-card li::before { content: '✗'; position: absolute; left: 0; color: #C83232; font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .logo-grid, .color-grid, .usage-grid, .do-dont, .icon-grid { grid-template-columns: 1fr; }
+    .type-row { flex-direction: column; gap: 8px; }
+    .type-meta { text-align: left; }
+    .hero h2 { font-size: 36px; }
+    .section { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Brand Identity</h1>
+  <h2>Vehicle<br>Preservation<br>Program</h2>
+  <p>Brand guidelines, logo system, and visual identity for the VPP platform and its network of certified centers.</p>
+  <div class="gold-rule"></div>
+</div>
+
+<!-- Section 1: Logo Concepts -->
+<div class="section">
+  <div class="section-label">01 — Logo Concepts</div>
+  <div class="section-title">Logo Lockup</div>
+  <div class="section-desc">
+    VPP shield + divider + wordmark. "Preservation" highlighted in gold. Classic pointed shield shape throughout.
+  </div>
+
+  <div class="logo-grid">
+
+    <!-- Primary Logo: Pointed shield + divider + wordmark -->
+    <div class="logo-card light" style="min-height: 260px;">
+      <div class="card-label">Primary — Light</div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <svg width="54" height="64" viewBox="0 0 54 64" fill="none" style="flex-shrink: 0;">
+          <path d="M27 3L4 12V30C4 45 27 60 27 60S50 45 50 30V12L27 3Z" fill="var(--forest)"/>
+          <path d="M27 3L4 12V30C4 45 27 60 27 60S50 45 50 30V12L27 3Z" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <text x="27" y="38" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="17" letter-spacing="0.5">VPP</text>
+        </svg>
+        <div style="height: 50px; width: 1.5px; background: var(--gold); opacity: 0.25;"></div>
+        <div>
+          <div style="font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; color: var(--forest); line-height: 1.1; letter-spacing: -0.01em;">
+            Vehicle <span style="color: var(--gold); font-weight: 800;">Preservation</span> Program
+          </div>
+          <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-top: 6px;">The standard in vehicle protection</div>
+        </div>
+      </div>
+      <div class="card-note">Pointed shield. VPP in gold. Divider + Outfit wordmark.<br>"Preservation" highlighted in gold. Clean, structured, official.</div>
+    </div>
+    <div class="logo-card dark" style="min-height: 260px;">
+      <div class="card-label">Primary — Dark</div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <svg width="54" height="64" viewBox="0 0 54 64" fill="none" style="flex-shrink: 0;">
+          <path d="M27 3L4 12V30C4 45 27 60 27 60S50 45 50 30V12L27 3Z" fill="rgba(201,168,76,0.05)"/>
+          <path d="M27 3L4 12V30C4 45 27 60 27 60S50 45 50 30V12L27 3Z" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <text x="27" y="38" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="17" letter-spacing="0.5">VPP</text>
+        </svg>
+        <div style="height: 50px; width: 1.5px; background: var(--gold); opacity: 0.15;"></div>
+        <div>
+          <div style="font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; color: white; line-height: 1.1; letter-spacing: -0.01em;">
+            Vehicle <span style="color: var(--gold); font-weight: 800;">Preservation</span> Program
+          </div>
+          <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-top: 6px;">The standard in vehicle protection</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stacked variant -->
+    <div class="logo-card light">
+      <div class="card-label">Stacked — Light</div>
+      <div style="text-align: center;">
+        <svg width="72" height="86" viewBox="0 0 72 86" fill="none" style="margin-bottom: 16px;">
+          <path d="M36 4L6 16V40C6 60 36 80 36 80S66 60 66 40V16L36 4Z" fill="var(--forest)"/>
+          <path d="M36 4L6 16V40C6 60 36 80 36 80S66 60 66 40V16L36 4Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+          <text x="36" y="50" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="22" letter-spacing="1">VPP</text>
+        </svg>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);">Vehicle</div>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 34px; font-weight: 800; color: var(--gold); line-height: 1.05; margin: 4px 0;">Preservation</div>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);">Program</div>
+      </div>
+      <div class="card-note">Stacked layout for centered placements — signage, merch, social.<br>Same pointed shield, wordmark below.</div>
+    </div>
+    <div class="logo-card dark">
+      <div class="card-label">Stacked — Dark</div>
+      <div style="text-align: center;">
+        <svg width="72" height="86" viewBox="0 0 72 86" fill="none" style="margin-bottom: 16px;">
+          <path d="M36 4L6 16V40C6 60 36 80 36 80S66 60 66 40V16L36 4Z" fill="rgba(201,168,76,0.05)"/>
+          <path d="M36 4L6 16V40C6 60 36 80 36 80S66 60 66 40V16L36 4Z" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+          <text x="36" y="50" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="22" letter-spacing="1">VPP</text>
+        </svg>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4);">Vehicle</div>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 34px; font-weight: 800; color: var(--gold); line-height: 1.05; margin: 4px 0;">Preservation</div>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4);">Program</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section 2: Shield Icons & Favicons -->
+<div class="section">
+  <div class="section-label">02 — Icon System</div>
+  <div class="section-title">Shield Icons & Favicons</div>
+  <div class="section-desc">
+    Pointed shield shape — VPP always. Clean, readable at every size.
+  </div>
+
+  <div class="icon-grid">
+    <div class="icon-card">
+      <div class="icon-box" style="background: var(--forest); border-radius: 18px;">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none">
+          <path d="M22 2L4 9V25C4 37 22 49 22 49S40 37 40 25V9L22 2Z" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <text x="22" y="30" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="14" letter-spacing="0.5">VPP</text>
+        </svg>
+      </div>
+      <div class="icon-label">Outlined</div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background: var(--forest); border-radius: 18px;">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none">
+          <path d="M22 2L4 9V25C4 37 22 49 22 49S40 37 40 25V9L22 2Z" fill="var(--gold)"/>
+          <text x="22" y="30" text-anchor="middle" fill="var(--forest)" font-family="Outfit" font-weight="800" font-size="14" letter-spacing="0.5">VPP</text>
+        </svg>
+      </div>
+      <div class="icon-label">Gold Filled</div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background: var(--gold); border-radius: 18px;">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none">
+          <path d="M22 2L4 9V25C4 37 22 49 22 49S40 37 40 25V9L22 2Z" fill="none" stroke="var(--forest)" stroke-width="2"/>
+          <text x="22" y="30" text-anchor="middle" fill="var(--forest)" font-family="Outfit" font-weight="800" font-size="14" letter-spacing="0.5">VPP</text>
+        </svg>
+      </div>
+      <div class="icon-label">Inverted</div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background: var(--forest); border-radius: 18px;">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none">
+          <path d="M22 2L4 9V25C4 37 22 49 22 49S40 37 40 25V9L22 2Z" fill="var(--gold)" opacity="0.12" stroke="var(--gold)" stroke-width="1.5"/>
+          <path d="M14 22L20 30L30 17" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="icon-label">Shield Check</div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box circle" style="background: var(--forest); border: 2px solid var(--gold);">
+        <svg width="36" height="42" viewBox="0 0 36 42" fill="none">
+          <path d="M18 2L3 8V20C3 30 18 39 18 39S33 30 33 20V8L18 2Z" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="18" y="25" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="11" letter-spacing="0.5">VPP</text>
+        </svg>
+      </div>
+      <div class="icon-label">Circle Badge</div>
+    </div>
+    <div class="icon-card">
+      <div class="icon-box" style="background: white; border: 1px solid var(--sage-dark); border-radius: 18px;">
+        <svg width="44" height="52" viewBox="0 0 44 52" fill="none">
+          <path d="M22 2L4 9V25C4 37 22 49 22 49S40 37 40 25V9L22 2Z" fill="var(--forest)" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="22" y="30" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="14" letter-spacing="0.5">VPP</text>
+        </svg>
+      </div>
+      <div class="icon-label">On White</div>
+    </div>
+  </div>
+
+  <!-- Favicon Scaling -->
+  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Favicon Scaling</h3>
+  <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">VPP in the shield at every size. Solid gold fill at 16px for legibility.</p>
+  <div class="favicon-row">
+    <div class="favicon-item">
+      <div class="icon-box" style="width: 64px; height: 64px; border-radius: 14px; background: var(--forest);">
+        <svg width="36" height="42" viewBox="0 0 36 42" fill="none">
+          <path d="M18 2L3 8V20C3 30 18 39 18 39S33 30 33 20V8L18 2Z" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="18" y="24" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="11">VPP</text>
+        </svg>
+      </div>
+      <div class="size-label">64px</div>
+    </div>
+    <div class="favicon-item">
+      <div class="icon-box sm" style="background: var(--forest);">
+        <svg width="26" height="30" viewBox="0 0 26 30" fill="none">
+          <path d="M13 2L2 6V16C2 23 13 28 13 28S24 23 24 16V6L13 2Z" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="13" y="18" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="8">VPP</text>
+        </svg>
+      </div>
+      <div class="size-label">48px</div>
+    </div>
+    <div class="favicon-item">
+      <div class="icon-box xs" style="background: var(--forest);">
+        <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
+          <path d="M9 1L1 4V11C1 17 9 20 9 20S17 17 17 11V4L9 1Z" fill="none" stroke="var(--gold)" stroke-width="1.2"/>
+          <text x="9" y="13" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="6">VPP</text>
+        </svg>
+      </div>
+      <div class="size-label">32px</div>
+    </div>
+    <div class="favicon-item">
+      <div style="width: 16px; height: 16px; border-radius: 3px; background: var(--forest); display: flex; align-items: center; justify-content: center;">
+        <svg width="10" height="12" viewBox="0 0 10 12" fill="none">
+          <path d="M5 1L1 3V7C1 10 5 11 5 11S9 10 9 7V3L5 1Z" fill="var(--gold)"/>
+        </svg>
+      </div>
+      <div class="size-label">16px</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- Section 3: Color System -->
+<div class="section">
+  <div class="section-label">03 — Color Palette</div>
+  <div class="section-title">Brand Colors</div>
+  <div class="section-desc">
+    Dark forest green and gold. The green communicates depth, trust, and expertise.
+    Gold signals premium quality, certification, and earned status. Together they read as established and valuable.
+  </div>
+
+  <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 16px; color: var(--text-primary);">Core Palette</h3>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #1F3A33;"></div>
+      <div class="color-info">
+        <div class="color-name">Forest</div>
+        <div class="color-hex">#1F3A33</div>
+        <div class="color-use">Primary brand color. Logo backgrounds, headers, app chrome, dark surfaces.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #2A4D42;"></div>
+      <div class="color-info">
+        <div class="color-name">Forest Mid</div>
+        <div class="color-hex">#2A4D42</div>
+        <div class="color-use">Hover states on dark surfaces. Secondary dark elements, card backgrounds.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #C9A84C;"></div>
+      <div class="color-info">
+        <div class="color-name">Gold</div>
+        <div class="color-hex">#C9A84C</div>
+        <div class="color-use">Primary accent. Buttons, links, active states, badges, certification marks.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #A8893A;"></div>
+      <div class="color-info">
+        <div class="color-name">Gold Dark</div>
+        <div class="color-hex">#A8893A</div>
+        <div class="color-use">Pressed states, text on light backgrounds, section labels.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 16px; margin-top: 32px; color: var(--text-primary);">Supporting Palette</h3>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #E0CB7E;"></div>
+      <div class="color-info">
+        <div class="color-name">Gold Light</div>
+        <div class="color-hex">#E0CB7E</div>
+        <div class="color-use">Highlights, badges on dark surfaces, subtle gold accents.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #E8F0EC;"></div>
+      <div class="color-info">
+        <div class="color-name">Sage</div>
+        <div class="color-hex">#E8F0EC</div>
+        <div class="color-use">Card backgrounds, section breaks, the "air" in the design.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #2D2E27;"></div>
+      <div class="color-info">
+        <div class="color-name">Charcoal</div>
+        <div class="color-hex">#2D2E27</div>
+        <div class="color-use">Body text, headings on light backgrounds.</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FAF8F3;"></div>
+      <div class="color-info">
+        <div class="color-name">Cream</div>
+        <div class="color-hex">#FAF8F3</div>
+        <div class="color-use">Page backgrounds. Warmer than pure white, pairs better with gold.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color pairing examples -->
+  <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 16px; margin-top: 32px; color: var(--text-primary);">Pairing Examples</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+    <div style="border-radius: 14px; overflow: hidden;">
+      <div style="background: var(--forest); padding: 28px 24px; text-align: center;">
+        <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 700; color: white;">Vehicle <span style="color: var(--gold);">Preservation</span></div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 600; margin-top: 4px; letter-spacing: 0.15em; text-transform: uppercase;">Program</div>
+      </div>
+      <div style="background: white; padding: 12px; text-align: center; font-size: 10px; color: var(--text-muted); border: 1px solid var(--sage-dark); border-top: none; border-radius: 0 0 14px 14px;">White + Gold accent on Forest</div>
+    </div>
+    <div style="border-radius: 14px; overflow: hidden;">
+      <div style="background: var(--cream); padding: 28px 24px; text-align: center; border: 1px solid var(--sage-dark); border-bottom: none; border-radius: 14px 14px 0 0;">
+        <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 700; color: var(--forest);">Vehicle <span style="color: var(--gold);">Preservation</span></div>
+        <div style="font-size: 11px; color: var(--gold-dark); font-weight: 600; margin-top: 4px; letter-spacing: 0.15em; text-transform: uppercase;">Program</div>
+      </div>
+      <div style="background: white; padding: 12px; text-align: center; font-size: 10px; color: var(--text-muted); border: 1px solid var(--sage-dark); border-top: none; border-radius: 0 0 14px 14px;">Forest + Gold accent on Cream</div>
+    </div>
+    <div style="border-radius: 14px; overflow: hidden;">
+      <div style="background: var(--gold); padding: 28px 24px; text-align: center;">
+        <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 700; color: var(--forest);">Vehicle Preservation</div>
+        <div style="font-size: 11px; color: rgba(31,58,51,0.6); font-weight: 600; margin-top: 4px; letter-spacing: 0.15em; text-transform: uppercase;">Program</div>
+      </div>
+      <div style="background: white; padding: 12px; text-align: center; font-size: 10px; color: var(--text-muted); border: 1px solid var(--sage-dark); border-top: none; border-radius: 0 0 14px 14px;">Forest text on Gold (use sparingly)</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section 4: Typography -->
+<div class="section">
+  <div class="section-label">04 — Typography</div>
+  <div class="section-title">Type System</div>
+  <div class="section-desc">
+    Outfit for headings and brand marks, Inter for body text and UI. Both are open-source with excellent weight ranges.
+  </div>
+
+  <div class="type-row">
+    <div class="type-label">Display</div>
+    <div class="type-sample">
+      <div style="font-family: 'Outfit', sans-serif; font-size: 42px; font-weight: 700; color: var(--forest); letter-spacing: -0.02em; line-height: 1.1;">
+        Vehicle <span style="color: var(--gold);">Preservation</span> Program
+      </div>
+    </div>
+    <div class="type-meta">Outfit Bold · 42px<br>Letter-spacing: -0.02em</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Heading 1</div>
+    <div class="type-sample">
+      <div style="font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em;">
+        Your Driver Profile: The Road Warrior
+      </div>
+    </div>
+    <div class="type-meta">Outfit Bold · 28px<br>Letter-spacing: -0.01em</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Heading 2</div>
+    <div class="type-sample">
+      <div style="font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 600; color: var(--text-primary);">
+        Recommended Protection Package
+      </div>
+    </div>
+    <div class="type-meta">Outfit Semibold · 20px</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">Body</div>
+    <div class="type-sample">
+      <div style="font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-secondary); line-height: 1.7;">
+        Based on your driving habits, environmental exposure, and vehicle condition, we've built a protection plan that targets the areas that matter most to you. Here's what we recommend for your 2024 Porsche 911.
+      </div>
+    </div>
+    <div class="type-meta">Inter Regular · 15px<br>Line-height: 1.7</div>
+  </div>
+  <div class="type-row">
+    <div class="type-label">UI Labels</div>
+    <div class="type-sample">
+      <div style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark);">
+        Protection Score · Maintenance Schedule · Investment Breakdown
+      </div>
+    </div>
+    <div class="type-meta">Inter Bold · 11px<br>Uppercase · Gold Dark</div>
+  </div>
+  <div class="type-row" style="border: none;">
+    <div class="type-label">Caption</div>
+    <div class="type-sample">
+      <div style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--text-muted);">
+        Prepared by Vehicle Preservation Program · February 2026 · VPP Center: Vive Auto Salon, Houston TX
+      </div>
+    </div>
+    <div class="type-meta">Inter Regular · 12px<br>Muted color</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section 5: In-App Usage -->
+<div class="section">
+  <div class="section-label">05 — In-App Branding</div>
+  <div class="section-title">How It Lives in the App</div>
+  <div class="section-desc">
+    The VPP brand leads. The shop's identity appears as a "certified center" within the VPP framework.
+    Think of it like "Ceramic Pro at [Shop Name]" — the program is the authority, the shop is the location.
+  </div>
+
+  <div class="usage-grid">
+    <div class="usage-card">
+      <div class="usage-mockup" style="background: var(--sage); flex-direction: column; gap: 16px;">
+        <div class="app-header-mock">
+          <div class="logo-mark" style="border-radius: 0; background: none; width: 32px; height: 38px;">
+            <svg width="32" height="38" viewBox="0 0 32 38" fill="none">
+              <path d="M16 2L3 7V19C3 28 16 36 16 36S29 28 29 19V7L16 2Z" fill="var(--forest)" stroke="var(--gold)" stroke-width="1"/>
+              <text x="16" y="22" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="8">VPP</text>
+            </svg>
+          </div>
+          <div class="header-text">
+            <div class="program-name">Vehicle <span style="color: var(--gold);">Preservation</span> Program</div>
+            <div class="shop-name">VPP Center: Vive Auto Salon · Houston, TX</div>
+          </div>
+        </div>
+        <div class="app-header-mock">
+          <div class="logo-mark" style="border-radius: 0; background: none; width: 32px; height: 38px;">
+            <svg width="32" height="38" viewBox="0 0 32 38" fill="none">
+              <path d="M16 2L3 7V19C3 28 16 36 16 36S29 28 29 19V7L16 2Z" fill="var(--forest)" stroke="var(--gold)" stroke-width="1"/>
+              <text x="16" y="22" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="8">VPP</text>
+            </svg>
+          </div>
+          <div class="header-text">
+            <div class="program-name">Vehicle <span style="color: var(--gold);">Preservation</span> Program</div>
+            <div class="shop-name">VPP Center: Elite Tint & PPF · Austin, TX</div>
+          </div>
+        </div>
+      </div>
+      <div class="usage-desc">
+        <h4>App Header — Shield Icon + Wordmark</h4>
+        <p>Shield VP mark anchors the left. "Preservation" in gold. Shop name always secondary, always below.</p>
+      </div>
+    </div>
+
+    <div class="usage-card">
+      <div class="usage-mockup" style="background: white; padding: 24px;">
+        <div style="width: 100%; max-width: 320px; background: white; border: 1px solid #ddd; border-radius: 4px; padding: 28px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid var(--forest);">
+            <div>
+              <div style="font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; color: var(--forest);">Vehicle <span style="color: var(--gold);">Preservation</span> Program</div>
+              <div style="font-size: 9px; color: var(--text-muted); margin-top: 2px;">Consultation Report · Feb 15, 2026</div>
+            </div>
+            <svg width="36" height="42" viewBox="0 0 36 42" fill="none">
+              <path d="M18 2L3 8V20C3 30 18 39 18 39S33 30 33 20V8L18 2Z" fill="var(--forest)" stroke="var(--gold)" stroke-width="1"/>
+              <text x="18" y="24" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="8">VPP</text>
+            </svg>
+          </div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-bottom: 4px;">Prepared for</div>
+          <div style="font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px;">John Smith</div>
+          <div style="font-size: 11px; color: var(--text-secondary); margin-bottom: 16px;">2024 Porsche 911 Carrera S</div>
+          <div style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: var(--sage); border-radius: 8px; font-size: 11px;">
+            <span style="font-size: 16px;">🏆</span>
+            <div>
+              <div style="font-weight: 600; color: var(--text-primary);">The Pristine Collector</div>
+              <div style="color: var(--text-muted); font-size: 10px;">Your Driver Profile</div>
+            </div>
+          </div>
+          <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; font-size: 8px; color: var(--text-muted); display: flex; justify-content: space-between;">
+            <span>Vive Auto Salon · Houston, TX</span>
+            <span style="color: var(--gold-dark); font-weight: 600;">VPP Certified Center</span>
+          </div>
+        </div>
+      </div>
+      <div class="usage-desc">
+        <h4>PDF Quote — Shield Mark in Header</h4>
+        <p>Shield icon top-right, VPP-branded header, shop footer. The report carries program authority.</p>
+      </div>
+    </div>
+
+    <div class="usage-card">
+      <div class="usage-mockup" style="background: var(--forest); flex-direction: column; gap: 12px; padding: 32px 24px;">
+        <svg width="48" height="56" viewBox="0 0 48 56" fill="none" style="margin-bottom: 4px;">
+          <path d="M24 3L5 11V27C5 39 24 52 24 52S43 39 43 27V11L24 3Z" fill="rgba(201,168,76,0.1)" stroke="var(--gold)" stroke-width="1.5"/>
+          <text x="24" y="32" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="13">VPP</text>
+        </svg>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; color: white; text-align: center; line-height: 1.15; letter-spacing: -0.02em;">Vehicle<br><span style="color: var(--gold);">Preservation</span><br>Program</div>
+        <div style="font-size: 11px; color: rgba(255,255,255,0.35); text-align: center;">The standard in vehicle protection</div>
+        <div style="margin-top: 12px; padding: 10px 24px; background: var(--gold); border-radius: 24px; color: var(--forest); font-size: 12px; font-weight: 700; text-align: center;">Find a VPP Center Near You</div>
+      </div>
+      <div class="usage-desc">
+        <h4>Consumer Website — Lead Generation</h4>
+        <p>Shield above the wordmark. Gold CTA on forest. Consumer entry point for the quiz and center locator.</p>
+      </div>
+    </div>
+
+    <div class="usage-card">
+      <div class="usage-mockup" style="background: var(--cream);">
+        <div style="text-align: center;">
+          <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--forest); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; box-shadow: 0 4px 20px rgba(31,58,51,0.15);">
+            <svg width="56" height="66" viewBox="0 0 56 66" fill="none">
+              <path d="M28 3L5 13V33C5 49 28 62 28 62S51 49 51 33V13L28 3Z" fill="none" stroke="var(--gold)" stroke-width="2"/>
+              <path d="M28 11L11 18V34C11 46 28 56 28 56S45 46 45 34V18L28 11Z" fill="none" stroke="var(--gold)" stroke-width="0.5" opacity="0.3"/>
+              <text x="28" y="40" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="17">VPP</text>
+            </svg>
+          </div>
+          <div style="font-size: 9px; color: var(--gold); font-weight: 700; letter-spacing: 0.15em; margin-bottom: 10px;">★ CERTIFIED ★</div>
+          <div style="font-family: 'Outfit'; font-size: 13px; font-weight: 700; color: var(--forest);">Vehicle Preservation Center</div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Vive Auto Salon · Houston, TX</div>
+          <div style="font-size: 9px; color: var(--gold-dark); font-weight: 600; margin-top: 8px; letter-spacing: 0.1em;">Since 2026</div>
+        </div>
+      </div>
+      <div class="usage-desc">
+        <h4>Certification Badge — Shield + Certified Below</h4>
+        <p>Clean VPP shield in circle. "Certified" sits underneath the shield, not crammed inside. Window decal, website badge, social asset.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section 6: Brand Voice -->
+<div class="section">
+  <div class="section-label">06 — Brand Voice & Usage</div>
+  <div class="section-title">Language & Positioning</div>
+  <div class="section-desc">
+    VPP is an authority, not a vendor. The language should reflect a program that shops are proud to be part of — not a tool they bought.
+  </div>
+
+  <div style="background: white; border-radius: 16px; padding: 32px; border: 1px solid var(--sage-dark); margin-bottom: 32px;">
+    <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 16px;">Brand Voice Attributes</h3>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div>
+        <div style="width: 36px; height: 36px; background: var(--forest); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2L3 7V13C3 18 12 22 12 22S21 18 21 13V7L12 2Z"/></svg>
+        </div>
+        <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">Authoritative</div>
+        <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">We set the standard. Shops certify to meet it. Consumers trust the program.</div>
+      </div>
+      <div>
+        <div style="width: 36px; height: 36px; background: var(--forest); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M17 21V19C17 16.79 15.21 15 13 15H5C2.79 15 1 16.79 1 19V21"/><circle cx="9" cy="7" r="4"/><path d="M23 21V19C23 17.13 21.87 15.52 20.24 14.85"/><path d="M16 3.13C17.67 3.78 18.82 5.39 18.82 7.26C18.82 9.13 17.67 10.74 16 11.39"/></svg>
+        </div>
+        <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">Approachable</div>
+        <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">Expert without being intimidating. We educate, not lecture. We consult, not sell.</div>
+      </div>
+      <div>
+        <div style="width: 36px; height: 36px; background: var(--forest); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 12H18L15 21L9 3L6 12H2"/></svg>
+        </div>
+        <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">Data-Driven</div>
+        <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">Paint gauges, protection scores, driver profiles. Every recommendation is backed by data.</div>
+      </div>
+      <div>
+        <div style="width: 36px; height: 36px; background: var(--forest); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">Premium</div>
+        <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">This is an investment, not an expense. We preserve value, not just apply products.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="do-dont">
+    <div class="do-card">
+      <h4>✓ Do Say</h4>
+      <ul>
+        <li>"Your Vehicle Preservation Center"</li>
+        <li>"VPP-certified advisor"</li>
+        <li>"Part of the Vehicle Preservation Program network"</li>
+        <li>"Consultation" (not "sales pitch")</li>
+        <li>"Protection plan" (not "package deal")</li>
+        <li>"Driver profile" (not "customer type")</li>
+        <li>"Investment" (not "cost" or "price")</li>
+        <li>"Preserve" and "protect" (active, positive)</li>
+      </ul>
+    </div>
+    <div class="dont-card">
+      <h4>✗ Don't Say</h4>
+      <ul>
+        <li>"Our software" or "the VPP app"</li>
+        <li>"White-label" or "your branded version"</li>
+        <li>"Powered by VPP" (VPP IS the power)</li>
+        <li>"Sales tool" or "closing tool"</li>
+        <li>"Package deal" or "bundle discount"</li>
+        <li>"Upsell" or "add-on revenue"</li>
+        <li>Shop name before VPP name</li>
+        <li>"Sign up for VPP" (shops "become certified")</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px; background: var(--forest); border-radius: 20px; padding: 40px; color: white;">
+    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px;">Naming Hierarchy</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+      <div>
+        <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">The Program</div>
+        <div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Vehicle Preservation Program</div>
+        <div style="font-size: 12px; opacity: 0.45; line-height: 1.5;">The overarching brand. The authority. What consumers trust and shops certify under.</div>
+      </div>
+      <div>
+        <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">The Location</div>
+        <div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Vehicle Preservation Center</div>
+        <div style="font-size: 12px; opacity: 0.45; line-height: 1.5;">What each certified shop becomes. "Vive Auto Salon, a Vehicle Preservation Center."</div>
+      </div>
+      <div>
+        <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">The Person</div>
+        <div style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">VPP-Certified Advisor</div>
+        <div style="font-size: 12px; opacity: 0.45; line-height: 1.5;">The individual who's been trained and certified to deliver consultations through the program.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section 7: Tagline Options -->
+<div class="section">
+  <div class="section-label">07 — Tagline Options</div>
+  <div class="section-title">Supporting Lines</div>
+  <div class="section-desc">
+    Taglines that can appear below the wordmark, on the website, or in marketing materials.
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div style="background: white; border-radius: 14px; padding: 24px; border: 1px solid var(--sage-dark);">
+      <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px;">Protect what moves you.</div>
+      <div style="font-size: 12px; color: var(--text-muted);">Emotional. Double meaning — the vehicle and what it represents to them.</div>
+    </div>
+    <div style="background: white; border-radius: 14px; padding: 24px; border: 1px solid var(--sage-dark);">
+      <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px;">The standard in vehicle protection.</div>
+      <div style="font-size: 12px; color: var(--text-muted);">Authoritative. Positions VPP as THE standard. Strong for B2B (shop recruitment).</div>
+    </div>
+    <div style="background: white; border-radius: 14px; padding: 24px; border: 1px solid var(--sage-dark);">
+      <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px;">Preserve. Protect. Perform.</div>
+      <div style="font-size: 12px; color: var(--text-muted);">Rhythmic triple. Clean for merch, badges, social headers. Memorable.</div>
+    </div>
+    <div style="background: white; border-radius: 14px; padding: 24px; border: 1px solid var(--sage-dark);">
+      <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px;">Certified protection for every driver.</div>
+      <div style="font-size: 12px; color: var(--text-muted);">Inclusive. Ties back to driver profiles. "Certified" reinforces the program model.</div>
+    </div>
+    <div style="background: white; border-radius: 14px; padding: 24px; border: 1px solid var(--sage-dark);">
+      <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px;">Your vehicle. Your profile. Your plan.</div>
+      <div style="font-size: 12px; color: var(--text-muted);">Personal. Speaks to the consultation-first approach. Customer-centric.</div>
+    </div>
+    <div style="background: white; border-radius: 14px; padding: 24px; border: 1px solid var(--sage-dark);">
+      <div style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px;">Where science meets preservation.</div>
+      <div style="font-size: 12px; color: var(--text-muted);">Data-driven. Nods to the paint gauge, scoring engine, driver analysis.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="background: var(--forest); padding: 48px 40px; text-align: center;">
+  <svg width="32" height="38" viewBox="0 0 32 38" fill="none" style="margin-bottom: 12px;">
+    <path d="M16 2L3 7V19C3 28 16 36 16 36S29 28 29 19V7L16 2Z" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+    <text x="16" y="22" text-anchor="middle" fill="var(--gold)" font-family="Outfit" font-weight="800" font-size="8">VPP</text>
+  </svg>
+  <div style="font-family: 'Outfit'; font-size: 14px; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; margin-bottom: 8px;">Vehicle Preservation Program</div>
+  <div style="color: rgba(255,255,255,0.25); font-size: 12px;">Brand Guide v3.0 · February 2026</div>
+  <div style="color: rgba(255,255,255,0.15); font-size: 10px; margin-top: 4px;">Confidential — for internal use only</div>
+</div>
+
+</body>
+</html>
